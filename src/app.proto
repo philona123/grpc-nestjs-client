@@ -1,0 +1,26 @@
+syntax = "proto3";
+package app;
+
+service AppController {
+    rpc Accumulate(AccumulateInput) returns (Details);
+}
+
+message Person {
+    string name = 1;
+    int32 age = 2;
+}
+
+message Address {
+    string street = 1;
+    string state = 2;
+}
+
+message Details {
+    Person person = 1;
+    Address address = 2;
+}
+
+message AccumulateInput {
+    Person person = 1;
+    Address address = 2;
+}
